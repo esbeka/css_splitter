@@ -49,6 +49,10 @@ module CssSplitter
           output << rule
           first_hit = false
         elsif selectors_count > selector_range.end # stop writing to output
+          puts ""
+          puts "NOTE: If you haven't created a split#{part+1} file yet, you need to do so now."
+          puts "Split#{part} has reached the limit of #{MAX_SELECTORS_DEFAULT} while trying to add #{selectors_count} selectors."
+          puts ""
           break
         end
       end
